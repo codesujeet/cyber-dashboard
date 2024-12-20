@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import Threats from "./pages/Threats";
 import Vulnerabilities from "./pages/Vulnerabilities";
 import Compliance from "./pages/Compliance";
+import SecOps from "./pages/SecOps";
+import SecurityScanner from "./pages/SecurityScanner";
+import RiskManager from "./pages/RiskManager";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +24,9 @@ const App = () => (
           <Route path="/threats" element={<Threats />} />
           <Route path="/vulnerabilities" element={<Vulnerabilities />} />
           <Route path="/compliance" element={<Compliance />} />
+          <Route path="/secops" element={<SecOps />} />
+          <Route path="/security-scanner" element={<SecurityScanner />} />
+          <Route path="/risk-manager" element={<RiskManager />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

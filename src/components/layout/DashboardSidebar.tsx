@@ -9,7 +9,9 @@ import {
   BarChart3,
   Shield as ShieldIcon,
   Database,
-  UserCog
+  UserCog,
+  Scan,
+  Bug
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -28,7 +30,11 @@ const menuItems = [
   {
     title: "Detections & Controls",
     icon: ShieldIcon,
-    items: ["SecOps", "Security Scanner", "Risk Manager"]
+    items: [
+      { name: "SecOps", path: "/secops" },
+      { name: "Security Scanner", path: "/security-scanner" },
+      { name: "Risk Manager", path: "/risk-manager" }
+    ]
   },
   {
     title: "Data Protection",
