@@ -1,5 +1,6 @@
 import { BarChart3, Shield, AlertTriangle } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const stats = [
   {
