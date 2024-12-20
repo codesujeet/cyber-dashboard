@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Threats from "./pages/Threats";
 import Vulnerabilities from "./pages/Vulnerabilities";
+import Compliance from "./pages/Compliance";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/threats" element={<Threats />} />
           <Route path="/vulnerabilities" element={<Vulnerabilities />} />
+          <Route path="/compliance" element={<Compliance />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
