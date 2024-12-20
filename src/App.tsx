@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Threats from "./pages/Threats";
+import Vulnerabilities from "./pages/Vulnerabilities";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/threats" element={<Threats />} />
+          <Route path="/vulnerabilities" element={<Vulnerabilities />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
