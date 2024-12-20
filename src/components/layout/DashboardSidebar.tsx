@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { 
   Shield, 
   Lock, 
@@ -17,7 +18,12 @@ const menuItems = [
   {
     title: "Risk Overview",
     icon: BarChart3,
-    items: ["Threats", "Vulnerabilities", "Compliance", "Assets"]
+    items: [
+      { name: "Threats", path: "/threats" },
+      { name: "Vulnerabilities", path: "/vulnerabilities" },
+      { name: "Compliance", path: "/compliance" },
+      { name: "Assets", path: "/assets" }
+    ]
   },
   {
     title: "Detections & Controls",
@@ -38,6 +44,13 @@ const menuItems = [
 
 export const DashboardSidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+
+  const handleItemClick = (path: string) => {
+    if (path) {
+      navigate(path);
+    }
+  };
 
   return (
     <aside 
@@ -77,12 +90,13 @@ export const DashboardSidebar = () => {
                 <div className="pl-9 space-y-1">
                   {item.items.map((subItem) => (
                     <Button
-                      key={subItem}
+                      key={typeof subItem === 'string' ? subItem : subItem.name}
                       variant="ghost"
                       size="sm"
                       className="w-full justify-start text-sm text-muted-foreground hover:text-foreground"
+                      onClick={() => typeof subItem === 'object' && handleItemClick(subItem.path)}
                     >
-                      {subItem}
+                      {typeof subItem === 'string' ? subItem : subItem.name}
                     </Button>
                   ))}
                 </div>
