@@ -1,10 +1,11 @@
 import { Bell, Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export const DashboardHeader = () => {
   return (
-    <header className="w-full h-16 px-6 flex items-center justify-between border-b border-white/10">
+    <header className="w-full h-16 px-6 flex items-center justify-between border-b border-white/10 dark:border-white/10 border-black/10">
       <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-cyber-blue to-cyber-green bg-clip-text text-transparent">
         SECURITY COMMAND CENTER
       </h1>
@@ -17,6 +18,8 @@ export const DashboardHeader = () => {
             className="pl-10 bg-secondary"
           />
         </div>
+        
+        <ThemeToggle />
         
         <Button variant="ghost" size="icon" className="relative">
           <Bell className="h-5 w-5" />
