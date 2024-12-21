@@ -61,7 +61,7 @@ export const DashboardSidebar = () => {
   return (
     <aside 
       className={cn(
-        "h-[calc(100vh-4rem)] border-r border-white/10 bg-black/40 transition-all duration-300",
+        "h-[calc(100vh-4rem)] transition-all duration-300 bg-white dark:bg-black/40 border-r border-slate-200/80 dark:border-white/10",
         collapsed ? "w-20" : "w-64"
       )}
     >
@@ -70,10 +70,10 @@ export const DashboardSidebar = () => {
           variant="ghost"
           size="icon"
           onClick={() => setCollapsed(!collapsed)}
-          className="w-full flex justify-end"
+          className="w-full flex justify-end hover:bg-slate-100 dark:hover:bg-white/5"
         >
           <ChevronLeft className={cn(
-            "h-5 w-5 transition-transform",
+            "h-5 w-5 transition-transform text-slate-600 dark:text-slate-400",
             collapsed && "rotate-180"
           )} />
         </Button>
@@ -84,12 +84,12 @@ export const DashboardSidebar = () => {
               <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start",
+                  "w-full justify-start text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5",
                   !collapsed ? "px-2" : "px-0 justify-center"
                 )}
               >
-                <item.icon className="h-5 w-5 mr-2" />
-                {!collapsed && <span>{item.title}</span>}
+                <item.icon className="h-5 w-5 mr-2 text-slate-600 dark:text-slate-400" />
+                {!collapsed && <span className="font-medium">{item.title}</span>}
               </Button>
               
               {!collapsed && (
@@ -99,7 +99,7 @@ export const DashboardSidebar = () => {
                       key={typeof subItem === 'string' ? subItem : subItem.name}
                       variant="ghost"
                       size="sm"
-                      className="w-full justify-start text-sm text-muted-foreground hover:text-foreground"
+                      className="w-full justify-start text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
                       onClick={() => typeof subItem === 'object' && handleItemClick(subItem.path)}
                     >
                       {typeof subItem === 'string' ? subItem : subItem.name}
