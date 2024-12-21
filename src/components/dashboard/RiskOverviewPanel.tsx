@@ -31,7 +31,7 @@ export const RiskOverviewPanel = () => {
     <div className="space-y-6 animate-fade-in">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {stats.map((stat) => (
-          <Card key={stat.title} className="glass-card p-6">
+          <Card key={stat.title} className="glass-card p-6 dark:bg-black/40 bg-white/40">
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{stat.title}</p>
@@ -49,7 +49,7 @@ export const RiskOverviewPanel = () => {
         ))}
       </div>
 
-      <Card className="glass-card p-6">
+      <Card className="glass-card p-6 dark:bg-black/40 bg-white/40">
         <h3 className="text-lg font-semibold mb-4">Threat Distribution</h3>
         <div className="h-[300px] flex items-center justify-center text-muted-foreground">
           Threat map visualization will go here

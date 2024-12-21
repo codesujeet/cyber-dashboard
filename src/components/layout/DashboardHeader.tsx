@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export const DashboardHeader = () => {
   return (
-    <header className="w-full h-16 px-6 flex items-center justify-between border-b border-white/10 dark:border-white/10 border-black/10">
+    <header className="w-full h-16 px-6 flex items-center justify-between border-b border-black/10 dark:border-white/10 bg-background">
       <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-cyber-blue to-cyber-green bg-clip-text text-transparent">
         SECURITY COMMAND CENTER
       </h1>
